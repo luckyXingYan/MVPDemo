@@ -14,6 +14,7 @@ import com.example.mvpdemo.presenter.HomePagePresenter;
 
 import java.util.List;
 
+
 public class SecondActivity extends BaseActivity<HomePagePresenter> implements IHomePageView {
 
 

@@ -2,11 +2,11 @@ package com.example.mvpdemo.presenter;
 
 import android.content.Context;
 
-import com.example.mvpdemo.base.mvp.BasePresenter;
 import com.example.mvpdemo.base.http.callback.HttpGsonCallback;
-import com.example.mvpdemo.model.MainPageModel;
+import com.example.mvpdemo.base.mvp.BasePresenter;
 import com.example.mvpdemo.bean.HomeDataBean;
 import com.example.mvpdemo.iview.IHomePageView;
+import com.example.mvpdemo.model.MainPageModel;
 
 import java.util.List;
 
