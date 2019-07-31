@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity<BasePresenter<IBaseView>> {
         btnMvp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 MainActivity.this.startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
