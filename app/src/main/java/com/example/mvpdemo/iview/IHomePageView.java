@@ -1,7 +1,7 @@
-package com.example.mvpdemo.home.iview;
+package com.example.mvpdemo.iview;
 
-import com.example.mvpdemo.base.IBaseView;
-import com.example.mvpdemo.home.bean.HomeDataBean;
+import com.example.mvpdemo.base.mvp.IBaseView;
+import com.example.mvpdemo.bean.HomeDataBean;
 
 import java.util.List;
 

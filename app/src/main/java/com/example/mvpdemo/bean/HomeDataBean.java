@@ -1,4 +1,4 @@
-package com.example.mvpdemo.home.bean;
+package com.example.mvpdemo.bean;
 
 import com.example.mvpdemo.base.bean.BaseBean;
 

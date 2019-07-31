@@ -1,7 +1,7 @@
-package com.example.mvpdemo.base.api;
+package com.example.mvpdemo.base.http.netcore.api;
 
 import com.example.mvpdemo.base.bean.HttpBean;
-import com.example.mvpdemo.home.bean.HomeDataBean;
+import com.example.mvpdemo.bean.HomeDataBean;
 
 import java.util.List;
 

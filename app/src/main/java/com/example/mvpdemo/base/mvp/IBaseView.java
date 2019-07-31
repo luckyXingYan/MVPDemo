@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base;
+package com.example.mvpdemo.base.mvp;
 
 
 public interface IBaseView extends IMvpBaseView {

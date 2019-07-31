@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base.http;
+package com.example.mvpdemo.base.http.callback;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -15,7 +15,7 @@ import retrofit2.Response;
  *  @date       : 2018/10/25
  *  description :
  ************************************************************/
-public abstract class HttpGsonCallback<T> extends BaseHttpGsonCallback<T> {
+public abstract class HttpGsonCallback<T> extends BaseGsonCallback<T> {
 
     private WeakReference<Context> context;
 

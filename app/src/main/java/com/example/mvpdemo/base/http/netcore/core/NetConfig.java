@@ -1,8 +1,9 @@
-package com.example.mvpdemo.base.http;
+package com.example.mvpdemo.base.http.netcore.core;
 
 import android.content.Context;
 
 import com.example.mvpdemo.BuildConfig;
+import com.example.mvpdemo.base.http.netcore.LogInterpector;
 import com.google.gson.GsonBuilder;
 
 import java.util.HashMap;

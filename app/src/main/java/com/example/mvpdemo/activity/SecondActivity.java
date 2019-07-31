@@ -1,5 +1,5 @@
 
-package com.example.mvpdemo.home.activity;
+package com.example.mvpdemo.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mvpdemo.R;
-import com.example.mvpdemo.base.BaseActivity;
-import com.example.mvpdemo.home.bean.HomeDataBean;
-import com.example.mvpdemo.home.iview.IHomePageView;
-import com.example.mvpdemo.home.presenter.HomePagePresenter;
+import com.example.mvpdemo.base.mvp.BaseActivity;
+import com.example.mvpdemo.bean.HomeDataBean;
+import com.example.mvpdemo.iview.IHomePageView;
+import com.example.mvpdemo.presenter.HomePagePresenter;
 
 import java.util.List;
 

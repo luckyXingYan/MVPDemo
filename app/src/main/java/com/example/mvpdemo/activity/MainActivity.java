@@ -1,14 +1,14 @@
-package com.example.mvpdemo;
+package com.example.mvpdemo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.mvpdemo.base.BaseActivity;
-import com.example.mvpdemo.base.BasePresenter;
-import com.example.mvpdemo.base.IBaseView;
-import com.example.mvpdemo.home.activity.SecondActivity;
+import com.example.mvpdemo.R;
+import com.example.mvpdemo.base.mvp.BaseActivity;
+import com.example.mvpdemo.base.mvp.BasePresenter;
+import com.example.mvpdemo.base.mvp.IBaseView;
 
 public class MainActivity extends BaseActivity<BasePresenter<IBaseView>> {
 

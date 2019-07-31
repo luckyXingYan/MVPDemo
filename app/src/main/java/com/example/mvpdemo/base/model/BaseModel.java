@@ -1,9 +1,9 @@
 package com.example.mvpdemo.base.model;
 
-import com.example.mvpdemo.base.api.ApiService;
+import com.example.mvpdemo.base.http.netcore.api.ApiService;
 import com.example.mvpdemo.base.bean.HttpBean;
-import com.example.mvpdemo.base.http.HttpGsonCallback;
-import com.example.mvpdemo.base.http.NetEngine;
+import com.example.mvpdemo.base.http.callback.HttpGsonCallback;
+import com.example.mvpdemo.base.http.netcore.core.NetEngine;
 
 
 import retrofit2.Call;

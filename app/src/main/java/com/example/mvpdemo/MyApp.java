@@ -2,8 +2,8 @@ package com.example.mvpdemo;
 
 import android.app.Application;
 
-import com.example.mvpdemo.base.http.NetConfig;
-import com.example.mvpdemo.base.http.NetEngine;
+import com.example.mvpdemo.base.http.netcore.core.NetConfig;
+import com.example.mvpdemo.base.http.netcore.core.NetEngine;
 
 /**
  * @Author: xingyan

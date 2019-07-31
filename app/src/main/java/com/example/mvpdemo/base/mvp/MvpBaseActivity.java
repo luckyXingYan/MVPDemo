@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base;
+package com.example.mvpdemo.base.mvp;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;

@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base.api;
+package com.example.mvpdemo.base.http.netcore.api;
 
 /**
  * <br>包名：com.netcore.api

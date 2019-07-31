@@ -1,8 +1,8 @@
-package com.example.mvpdemo.home.model;
+package com.example.mvpdemo.model;
 
-import com.example.mvpdemo.base.http.HttpGsonCallback;
+import com.example.mvpdemo.base.http.callback.HttpGsonCallback;
 import com.example.mvpdemo.base.model.BaseModel;
-import com.example.mvpdemo.home.bean.HomeDataBean;
+import com.example.mvpdemo.bean.HomeDataBean;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base.http;
+package com.example.mvpdemo.base.http.callback;
 
 import android.util.Log;
 
@@ -13,7 +13,7 @@ import retrofit2.Response;
  *  @date       : 2018/10/25
  *  description :
  ************************************************************/
-public abstract class BaseHttpGsonCallback<T> implements Callback<HttpBean<T>> {
+public abstract class BaseGsonCallback<T> implements Callback<HttpBean<T>> {
 
     @Override
     public void onResponse(Call<HttpBean<T>> call, Response<HttpBean<T>> response) {

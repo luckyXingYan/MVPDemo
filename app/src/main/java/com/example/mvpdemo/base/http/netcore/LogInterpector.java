@@ -1,4 +1,4 @@
-package com.example.mvpdemo.base.http;
+package com.example.mvpdemo.base.http.netcore;
 
 import android.util.Log;
 

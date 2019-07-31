@@ -1,6 +1,6 @@
-package com.example.mvpdemo.base.http;
+package com.example.mvpdemo.base.http.netcore.core;
 
-import com.example.mvpdemo.base.api.ApiService;
+import com.example.mvpdemo.base.http.netcore.api.ApiService;
 
 import java.io.IOException;
 import java.util.HashMap;
