@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.example.mvpdemo.base.http.callback.HttpGsonCallback;
 import com.example.mvpdemo.base.mvp.BasePresenter;
-import com.example.mvpdemo.bean.HomeDataBean;
-import com.example.mvpdemo.iview.IHomePageView;
+import com.example.mvpdemo.bean.DetailDataBean;
+import com.example.mvpdemo.iview.IDetailView;
 import com.example.mvpdemo.model.HomePageModel;
 
 import java.util.List;
@@ -15,17 +15,17 @@ import java.util.List;
  * @Date: 2019/7/31
  * @Desc:
  */
-public class HomePagePresenter extends BasePresenter<IHomePageView> {
+public class DetailPresenter extends BasePresenter<IDetailView> {
     private HomePageModel model;
 
-    //模拟 首页列表
-    public void getHomePageData(String start, String count, Context context) {
-        model.getHomePageData(start, count, new HttpGsonCallback<List<HomeDataBean>>(context) {
+    //模拟 详情
+    public void getDetailData(String start, String count, Context context) {
+        model.getDetailData(start, count, new HttpGsonCallback<List<DetailDataBean>>(context) {
 
             @Override
-            public void onSuccess(List<HomeDataBean> data) {
+            public void onSuccess(List<DetailDataBean> data) {
                 if (isViewAttached()) {
-                    getView().updateHomeData(data);
+                    getView().updateDetailData(data);
                 }
             }
 
@@ -36,14 +36,13 @@ public class HomePagePresenter extends BasePresenter<IHomePageView> {
         });
     }
 
-    //模拟 首页广告
-    public void getBannerData(String start, String count, Context context) {
-        model.getHomePageData(start, count, new HttpGsonCallback<List<HomeDataBean>>(context) {
+    public void getInfoData(String start, String count, Context context) {
+        model.getInfoData(start, count, new HttpGsonCallback<List<DetailDataBean>>(context) {
 
             @Override
-            public void onSuccess(List<HomeDataBean> data) {
+            public void onSuccess(List<DetailDataBean> data) {
                 if (isViewAttached()) {
-                    getView().updateHomeData(data);
+                    getView().updateInfoData(data);
                 }
             }
 

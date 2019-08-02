@@ -18,39 +18,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends MvpBaseActiv
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         setContentView(layoutId());
-        initLayoutView(savedInstanceState);
-    }
-
-
-    @Override
-    public void showNetworkErrorDialog() {
-
-    }
-
-    @Override
-    public void showLoadingDialog() {
-
-    }
-
-    @Override
-    public void dismissLoadingDialog() {
-
-    }
-
-
-    @Override
-    public void showToastMsg(String msg) {
-        ToastUtil.showToastShort(this, msg);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+        initView(savedInstanceState);
+        initData();
     }
 
     @Override
@@ -62,7 +31,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends MvpBaseActiv
         }
     }
 
+    @Override
+    public void showToastMsg(String msg) {
+        ToastUtil.showToastShort(this, msg);
+    }
+
     protected abstract int layoutId();
 
-    protected abstract void initLayoutView(Bundle savedInstanceState);
+    protected abstract void initView(Bundle savedInstanceState);
+
+    protected abstract void initData();
 }

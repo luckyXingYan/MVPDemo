@@ -3,7 +3,7 @@ package com.example.mvpdemo.base.http.callback;
 import android.content.Context;
 import android.support.annotation.Nullable;
 
-import com.example.mvpdemo.base.bean.HttpBean;
+import com.example.mvpdemo.base.bean.ResultBean;
 
 import java.lang.ref.WeakReference;
 
@@ -29,7 +29,7 @@ public abstract class HttpGsonCallback<T> extends BaseGsonCallback<T> {
 
 
     @Override
-    public void onResponse(Call<HttpBean<T>> call, Response<HttpBean<T>> response) {
+    public void onResponse(Call<ResultBean<T>> call, Response<ResultBean<T>> response) {
         super.onResponse(call, response);
         onFinish();
 
@@ -37,7 +37,7 @@ public abstract class HttpGsonCallback<T> extends BaseGsonCallback<T> {
 
 
     @Override
-    public void onFailure(Call<HttpBean<T>> call, Throwable t) {
+    public void onFailure(Call<ResultBean<T>> call, Throwable t) {
         super.onFailure(call, t);
         onFinish();
     }

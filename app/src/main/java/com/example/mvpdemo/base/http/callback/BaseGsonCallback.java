@@ -2,7 +2,7 @@ package com.example.mvpdemo.base.http.callback;
 
 import android.util.Log;
 
-import com.example.mvpdemo.base.bean.HttpBean;
+import com.example.mvpdemo.base.bean.ResultBean;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,10 +13,10 @@ import retrofit2.Response;
  *  @date       : 2018/10/25
  *  description :
  ************************************************************/
-public abstract class BaseGsonCallback<T> implements Callback<HttpBean<T>> {
+public abstract class BaseGsonCallback<T> implements Callback<ResultBean<T>> {
 
     @Override
-    public void onResponse(Call<HttpBean<T>> call, Response<HttpBean<T>> response) {
+    public void onResponse(Call<ResultBean<T>> call, Response<ResultBean<T>> response) {
         if (response.isSuccessful()) {
             dealResponseSuccess(response.body());
         } else {
@@ -25,21 +25,21 @@ public abstract class BaseGsonCallback<T> implements Callback<HttpBean<T>> {
     }
 
     @Override
-    public void onFailure(Call<HttpBean<T>> call, Throwable t) {
+    public void onFailure(Call<ResultBean<T>> call, Throwable t) {
         onConnectionFailed();
         t.printStackTrace();
         Log.e("gson,接口调用失败:", t.getMessage());
     }
 
-    private void dealResponseSuccess(HttpBean<T> model) {
+    private void dealResponseSuccess(ResultBean<T> model) {
         int state = model.getCode();
         switch (state) {
-            case HttpBean.STATE_SUCCESS:
+            case ResultBean.STATE_SUCCESS:
                 T data = model.getData();
                 onSuccess(data);
                 break;
-            case HttpBean.STATE_FAILURE:
-//                HttpBean.ErrorObject error = model.getErrorObj();
+            case ResultBean.STATE_FAILURE:
+//                ResultBean.ErrorObject error = model.getErrorObj();
 //                if (error != null) {
 //                    int errorCode = error.getCode();
 //                    String errorMsg = error.getMsg();
@@ -60,7 +60,7 @@ public abstract class BaseGsonCallback<T> implements Callback<HttpBean<T>> {
 
     }
 
-    private void dealResponseFailed(Response<HttpBean<T>> response) {
+    private void dealResponseFailed(Response<ResultBean<T>> response) {
         Log.i("LOG_HTTP", "[BaseGsonCallback] 接口返回错误 code=" + response.code());
         switch (response.code()) {
             case 401:  //Cookie过期

@@ -5,7 +5,7 @@ package com.example.mvpdemo.base.bean;
  *  @date       : 2018/10/25
  *  description : 
  ************************************************************/
-public class HttpBean<T> {
+public class ResultBean<T> {
 
     private String count;
     private String start;
@@ -54,7 +54,7 @@ public class HttpBean<T> {
 //
 //    @Override
 //    public String toString() {
-//        return "HttpBean{" +
+//        return "ResultBean{" +
 //                "code=" + code +
 //                ", data=" + data +
 //                ", errorObj=" + errorObj +
@@ -92,7 +92,7 @@ public class HttpBean<T> {
 
     @Override
     public String toString() {
-        return "HttpBean{" +
+        return "ResultBean{" +
                 "code=" + code +
                 ", subjects=" + subjects +
                 ", title=" + title +

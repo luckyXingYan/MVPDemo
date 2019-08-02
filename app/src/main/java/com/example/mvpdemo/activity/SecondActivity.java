@@ -1,6 +1,8 @@
 
 package com.example.mvpdemo.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,18 +10,22 @@ import android.widget.Button;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.base.mvp.BaseActivity;
-import com.example.mvpdemo.bean.HomeDataBean;
-import com.example.mvpdemo.iview.IHomePageView;
-import com.example.mvpdemo.presenter.HomePagePresenter;
+import com.example.mvpdemo.bean.DetailDataBean;
+import com.example.mvpdemo.iview.IDetailView;
+import com.example.mvpdemo.presenter.DetailPresenter;
 
 import java.util.List;
 
 
-public class SecondActivity extends BaseActivity<HomePagePresenter> implements IHomePageView {
+public class SecondActivity extends BaseActivity<DetailPresenter> implements IDetailView {
 
 
     private static final String TAG = "SecondActivity";
     private Button btnRequest;
+
+    public static void open(Context context) {
+        context.startActivity(new Intent(context, SecondActivity.class));
+    }
 
 
     @Override
@@ -28,36 +34,37 @@ public class SecondActivity extends BaseActivity<HomePagePresenter> implements I
     }
 
     @Override
-    protected void initLayoutView(Bundle savedInstanceState) {
+    protected void initView(Bundle savedInstanceState) {
+        btnRequest = getView(R.id.btn_request);
 
-
-        btnRequest = (Button) findViewById(R.id.btn_request);
         btnRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.getBannerData("0", "2", SecondActivity.this);
+                presenter.getInfoData("0", "1", SecondActivity.this);
             }
         });
+    }
 
+    @Override
+    protected void initData() {
         if (presenter != null) {
-            //#https://douban.uieee.com/v2/movie/top250?start=0&count=10即可。
-            presenter.getMainPageData("0", "2", this);
+            presenter.getDetailData("0", "1", this);
         }
     }
 
     @Override
-    protected HomePagePresenter createPresenter() {
+    protected DetailPresenter createPresenter() {
         //初始化 presenter
-        return new HomePagePresenter();
+        return new DetailPresenter();
     }
 
     @Override
-    public void updateHomeData(List<HomeDataBean> data) {
-        Log.e(TAG, "updateHomeData：" + data.toString());
+    public void updateDetailData(List<DetailDataBean> data) {
+        Log.e(TAG, "updateDetailData：" + data.toString());
     }
 
     @Override
-    public void updateBannerData(List<HomeDataBean> data) {
-        Log.e(TAG, "updateBannerData：" + data.toString());
+    public void updateInfoData(List<DetailDataBean> data) {
+        Log.e(TAG, "updateInfoData：" + data.toString());
     }
 }

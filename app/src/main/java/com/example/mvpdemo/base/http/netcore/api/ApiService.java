@@ -1,7 +1,9 @@
 package com.example.mvpdemo.base.http.netcore.api;
 
-import com.example.mvpdemo.base.bean.HttpBean;
+import com.example.mvpdemo.base.bean.ResultBean;
+import com.example.mvpdemo.bean.DetailDataBean;
 import com.example.mvpdemo.bean.HomeDataBean;
+import com.example.mvpdemo.bean.ProductDataBean;
 
 import java.util.List;
 
@@ -23,5 +25,17 @@ public interface ApiService {
     //#https://douban.uieee.com/v2/movie/top250?start=0&count=10即可。
     @FormUrlEncoded
     @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
-    Call<HttpBean<List<HomeDataBean>>> getHomePageData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
+    Call<ResultBean<List<HomeDataBean>>> getHomePageData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
+
+    @FormUrlEncoded
+    @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
+    Call<ResultBean<List<DetailDataBean>>> getDetailData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
+
+    @FormUrlEncoded
+    @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
+    Call<ResultBean<List<DetailDataBean>>> getInfoData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
+
+    @FormUrlEncoded
+    @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
+    Call<ResultBean<List<ProductDataBean>>> getProductPageData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
 }

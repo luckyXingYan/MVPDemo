@@ -1,7 +1,7 @@
 package com.example.mvpdemo.base.model;
 
+import com.example.mvpdemo.base.bean.ResultBean;
 import com.example.mvpdemo.base.http.netcore.api.ApiService;
-import com.example.mvpdemo.base.bean.HttpBean;
 import com.example.mvpdemo.base.http.callback.HttpGsonCallback;
 import com.example.mvpdemo.base.http.netcore.core.NetEngine;
 
@@ -21,7 +21,7 @@ public class BaseModel {
         apiService = NetEngine.getServerApi();
     }
 
-    protected <T> void invoke(Call<HttpBean<T>> call, HttpGsonCallback<T> callBack) {
+    protected <T> void invoke(Call<ResultBean<T>> call, HttpGsonCallback<T> callBack) {
 //        if (mCall != null) {
 //            mCall.enqueue(callBack);
 //        }
