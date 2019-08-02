@@ -6,6 +6,7 @@ import com.example.mvpdemo.bean.HomeDataBean;
 import com.example.mvpdemo.bean.ProductDataBean;
 
 import java.util.List;
+import java.util.Observable;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -26,6 +27,10 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
     Call<ResultBean<List<HomeDataBean>>> getHomePageData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
+
+//    @FormUrlEncoded
+//    @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
+//    Observable<ResultBean<List<HomeDataBean>>> getData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
 
     @FormUrlEncoded
     @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
