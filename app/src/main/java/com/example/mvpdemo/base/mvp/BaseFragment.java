@@ -56,7 +56,9 @@ public abstract class BaseFragment<P extends BasePresenter> extends MvpBaseFragm
     @Override
     public void onDestroy() {
         super.onDestroy();
-        presenter.cancelNetWork();
+        if (presenter != null) {
+            presenter.cancelNetWork();
+        }
     }
 
     @Override

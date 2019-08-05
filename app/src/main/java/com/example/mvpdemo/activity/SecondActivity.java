@@ -4,6 +4,7 @@ package com.example.mvpdemo.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,11 +46,19 @@ public class SecondActivity extends BaseActivity<DetailPresenter> implements IDe
         });
     }
 
+    private Handler handler = new Handler();
+
     @Override
     protected void initData() {
         if (presenter != null) {
             presenter.getDetailData("0", "1", this);
         }
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                showToastMsg("aaa");
+//            }
+//        }, 99999999);
     }
 
     @Override
