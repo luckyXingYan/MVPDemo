@@ -50,9 +50,9 @@ public class SecondActivity extends BaseActivity<DetailPresenter> implements IDe
 
     @Override
     protected void initData() {
-        if (presenter != null) {
-            presenter.getDetailData("0", "1", this);
-        }
+//        if (presenter != null) {
+//            presenter.getDetailData("0", "1", this);
+//        }
 //        handler.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
