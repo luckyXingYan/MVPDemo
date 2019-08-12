@@ -60,5 +60,6 @@ public class DetailPresenter extends BasePresenter<IDetailView> {
 
     @Override
     public void cancelNetWork() {
+        model.cancel();
     }
 }

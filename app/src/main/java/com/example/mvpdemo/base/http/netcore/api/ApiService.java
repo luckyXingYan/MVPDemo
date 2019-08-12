@@ -28,10 +28,6 @@ public interface ApiService {
     @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
     Call<ResultBean<List<HomeDataBean>>> getHomePageData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
 
-//    @FormUrlEncoded
-//    @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
-//    Observable<ResultBean<List<HomeDataBean>>> getData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);
-
     @FormUrlEncoded
     @POST(ApiRoute.PRODUCT.GET_HOMEPAGE_REDPACKETS_STATUS)
     Call<ResultBean<List<DetailDataBean>>> getDetailData(@Field(ApiKeys.START) String start, @Field(ApiKeys.COUNT) String count);

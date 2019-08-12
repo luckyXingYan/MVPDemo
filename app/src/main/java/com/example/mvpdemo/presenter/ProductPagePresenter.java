@@ -44,5 +44,6 @@ public class ProductPagePresenter extends BasePresenter<IProductPageView> {
 
     @Override
     public void cancelNetWork() {
+        model.cancel();
     }
 }

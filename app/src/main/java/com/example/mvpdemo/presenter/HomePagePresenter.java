@@ -61,5 +61,6 @@ public class HomePagePresenter extends BasePresenter<IHomePageView> {
 
     @Override
     public void cancelNetWork() {
+        model.cancel();
     }
 }
