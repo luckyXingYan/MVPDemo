@@ -13,4 +13,12 @@
         android:text="首页"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/btn_three"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Three_Activity"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btn_request"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

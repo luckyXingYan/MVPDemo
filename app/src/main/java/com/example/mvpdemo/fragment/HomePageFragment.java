@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.activity.SecondActivity;
+import com.example.mvpdemo.activity.ThreeActivity;
 import com.example.mvpdemo.base.mvp.BaseFragment;
 import com.example.mvpdemo.bean.HomeDataBean;
 import com.example.mvpdemo.iview.IHomePageView;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements IHomePageView {
     private static final String TAG = "HomePageFragment";
-    private Button btnRequest;
+    private Button btnRequest,btn_three;
 
 
     public static HomePageFragment newInstance() {
@@ -35,10 +36,17 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
     @Override
     protected void initView(final View view) {
         btnRequest = getView(view, R.id.btn_request);
+        btn_three = getView(view, R.id.btn_three);
         btnRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SecondActivity.open(getActivity());
+            }
+        });
+        btn_three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ThreeActivity.open(getActivity());
             }
         });
     }

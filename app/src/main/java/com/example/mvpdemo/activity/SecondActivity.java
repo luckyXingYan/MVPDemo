@@ -34,6 +34,7 @@ public class SecondActivity extends BaseScrollTitleBarActivity<DetailPresenter> 
 
     @Override
     protected void initContentView() {
+        mTitleBar.setTitle("标题2");
         btnRequest = getView(R.id.btn_request);
 
         btnRequest.setOnClickListener(new View.OnClickListener() {

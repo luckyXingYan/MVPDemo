@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingConstraints">
+    android:background="#fff"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/main_content"
+    <!--  app:elevation="0dp" 去掉阴影 -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/y150"
+        android:background="@null"
+        app:elevation="0dp">
+        <!-- layout_scrollFlags 需要设置在 AppBarLayout 根布局中-->
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/appbar"
+        <!-- CollapsingToolbarLayout 可实现 toolBar 的折叠效果
+            父布局必须是 AppBarLayout -->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="@style/Title_TextAppearance_collapsed"
+            app:expandedTitleMarginBottom="@dimen/y10"
+            app:expandedTitleTextAppearance="@style/Title_TextAppearance_Expend"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                android:layout_height="@dimen/y88"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@mipmap/ic_title_back"
+                app:title="标题"
+                app:titleTextAppearance="@style/Title_TextAppearance_Expend">
 
+                <!--              <ImageView
+                                  android:id="@+id/titleBarLeft"
+                                  android:layout_width="@dimen/x94"
+                                  android:layout_height="match_parent"
+                                  android:layout_gravity="center_vertical"
+                                  android:scaleType="centerInside"
+                                  android:src="@mipmap/ic_title_back" />
+          -->
+            </android.support.v7.widget.Toolbar>
 
-        </android.support.design.widget.AppBarLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/nsv_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    </android.support.design.widget.CoordinatorLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <FrameLayout
         android:id="@+id/fl_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_gravity="bottom" />
+</android.support.design.widget.CoordinatorLayout>
+
+
