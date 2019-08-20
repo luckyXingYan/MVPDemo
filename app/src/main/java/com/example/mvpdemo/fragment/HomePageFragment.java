@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.activity.FourActivity;
+import com.example.mvpdemo.activity.RecyclerViewActivity;
+import com.example.mvpdemo.activity.RecyclerViewActivity2;
 import com.example.mvpdemo.activity.SecondActivity;
 import com.example.mvpdemo.activity.ThreeActivity;
 import com.example.mvpdemo.base.mvp.BaseFragment;
@@ -28,7 +30,7 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements IHomePageView, View.OnClickListener {
     private static final String TAG = "HomePageFragment";
-    private Button btnRequest, btn_three, btn_four, btn_snackBar;
+    private Button btnRequest, btn_three, btn_four, btn_snackBar, btn_recyclerView;
 
 
     public static HomePageFragment newInstance() {
@@ -46,10 +48,12 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
         btn_three = getView(view, R.id.btn_three);
         btn_four = getView(view, R.id.btn_four);
         btn_snackBar = getView(view, R.id.btn_snackBar);
+        btn_recyclerView = getView(view, R.id.btn_recyclerView);
         btnRequest.setOnClickListener(this);
         btn_three.setOnClickListener(this);
         btn_four.setOnClickListener(this);
         btn_snackBar.setOnClickListener(this);
+        btn_recyclerView.setOnClickListener(this);
     }
 
     @Override
@@ -130,6 +134,9 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
                 textView.setCompoundDrawablePadding(20);
                 textView.setGravity(Gravity.CENTER);
                 snackbar.show();
+                break;
+            case R.id.btn_recyclerView://recyclerView
+                RecyclerViewActivity.open(getActivity());
                 break;
             default:
                 break;

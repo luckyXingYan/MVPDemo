@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60"
+        android:background="#ccccce"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x40"
+        android:text="数据" />
+
+    <!--高度自适应 android:scaleType="centerCrop" 有些scaleType需要ImageView容器固定宽高才能设置，比如centerCrop
+    方法1： 如果添加了 centerCrop ，则需要固定宽高
+    方法2：自定义ImageView，extends AppCompatImageView，  super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+    方法3：固定图片父布局高度，extends LinearLayout，  super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+    === 以上方法会使得图片变形，解决如下：
+    方法4：adjustViewBounds属性，会默认将此imageView的scaleType属性设置为fitCenter;XML设置android:scaleType优先级更高;代码中的最高
+    -->
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y200"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <Button
+        android:id="@+id/btn_loop"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y80"
+        android:text="recyclerView 无限循环滚动"
+        android:textAllCaps="false" />
+
+
+    <!--分割线：
+    方法1：在每个Item布局中添加一个横线作为分割线,弊端，需在代码中隐藏最后一个Item的分割线
+    方法2：使用ItemDecoration抽象接口
+    -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y10"
+        android:background="#FF6667" />
+</LinearLayout>

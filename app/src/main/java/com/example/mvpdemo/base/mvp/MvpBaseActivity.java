@@ -26,8 +26,8 @@ public abstract class MvpBaseActivity<P extends MvpBasePresenter> extends AppCom
     }
 
 
-    protected <T extends View> T getView(@IdRes int resId) {
-        return findViewById(resId);
+    protected <V extends View> V getView(@IdRes int resId) {
+        return (V) findViewById(resId);
     }
 
     @Override

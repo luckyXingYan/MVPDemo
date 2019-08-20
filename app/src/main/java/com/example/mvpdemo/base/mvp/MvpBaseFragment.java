@@ -30,8 +30,8 @@ public abstract class MvpBaseFragment<P extends MvpBasePresenter> extends Fragme
         }
     }
 
-    protected <T extends View> T getView(View view, int resId) {
-        return view.findViewById(resId);
+    protected <V extends View> V getView(View view, int resId) {
+        return (V) view.findViewById(resId);
     }
 
     public abstract P createPresenter();

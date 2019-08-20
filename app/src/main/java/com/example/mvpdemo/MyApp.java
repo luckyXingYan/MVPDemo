@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.example.mvpdemo.base.http.netcore.core.NetConfig;
 import com.example.mvpdemo.base.http.netcore.core.NetEngine;
+import com.example.mvpdemo.util.SwitchFrontBackgroundCallbacks;
 import com.squareup.leakcanary.LeakCanary;
 
 
@@ -20,6 +21,8 @@ public class MyApp extends Application {
         NetEngine.init(NetConfig.create(this));
         //初始化内存泄露检测器
         initLeakCanary();
+        //此处作用是监听前后台切换的变化
+        registerActivityLifecycleCallbacks(new SwitchFrontBackgroundCallbacks());
     }
 
     private void initLeakCanary() {

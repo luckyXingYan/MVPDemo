@@ -39,4 +39,26 @@
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/btn_four"
         tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/btn_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="CheckBox"
+        android:textAllCaps="false"
+        android:textColor="#44ff66"
+        android:textSize="18sp"
+        android:theme="@style/checkbox"
+        app:layout_constraintLeft_toRightOf="@id/btn_snackBar"
+        app:layout_constraintTop_toBottomOf="@id/btn_four"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="recyclerView"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btn_checkBox"
+        app:layout_constraintTop_toBottomOf="@id/btn_four" />
 </android.support.constraint.ConstraintLayout>
