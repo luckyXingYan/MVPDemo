@@ -57,7 +57,7 @@ public class CardViewImgAdapter extends BaseRecyclerAdapter<String, CardViewImgA
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showToastLong(context, "手动复写onCreateViewHolder方法做item调整");
+                showToastMsg("手动复写onCreateViewHolder方法做item调整");
             }
         });
         return viewHolder;

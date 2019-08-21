@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mvpdemo.base.util.ToastUtil;
+
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -105,4 +108,10 @@ public abstract class BaseRecyclerAdapter<T, VH extends BaseViewHolder> extends 
     public abstract int getViewType(int position);
 
     public abstract VH getViewHolder(View view, int viewType);
+
+    public void showToastMsg(String msg) {
+        ToastUtil.showToastShort(context, msg);
+    }
+
+
 }

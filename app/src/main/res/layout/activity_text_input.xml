@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/y40"
+    tools:context=".activity.TextInputActivity"
+    tools:ignore="MissingConstraints">
+
+    <!--  app:counterEnabled="true" //设置为true才能显字符数
+        app:counterMaxLength="5" //设置最大字符数为5
+        app:counterOverflowTextAppearance="@style/HintError" //设置超出字符数后提示文字的颜色，如果不设置默认为@color/colorAccent的颜色
+         app:hintEnabled="false" 设置是否开启浮动提示文字功能
+         app:hintAnimationEnabled 设置是否开启浮动提示动画
+        -->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/CustomAppTheme_textInputLayout"
+        app:counterEnabled="true"
+        app:counterMaxLength="5"
+        app:counterOverflowTextAppearance="@style/overAppearance"
+        app:counterTextAppearance="@style/counterAppearance"
+        app:hintEnabled="false">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入手机号"
+            android:imeOptions="actionNext"
+            android:inputType="numberSigned"
+            android:maxLines="1"
+            android:nextFocusForward="@id/et_password"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
+    <!--  app:passwordToggleEnabled="true" 设置密码的可见性
+        app:passwordToggleDrawable="@drawable/selector_toggle_btn_bg"  自定义密码可见性图标 代码中设置才生效
+        app:errorTextAppearance="@style/errorAppearance" 自定义 textInputLayout 的 error样式
+        app:hintTextAppearance="@style/hintAppearance"  设置提示文字样式
+        app:passwordToggleTint=""  控制密码可见开关图标的颜色selector
+    -->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:theme="@style/CustomAppTheme_textInputLayout"
+        app:errorTextAppearance="@style/errorAppearance"
+        app:hintTextAppearance="@style/hintAppearance"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_phone"
+        app:passwordToggleEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:nextFocusForward="@id/et_code"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:theme="@style/CustomAppTheme_textInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_password">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入验证码"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y60"
+        android:text="提交"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_code" />
+</android.support.constraint.ConstraintLayout>

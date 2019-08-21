@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.RecyclerViewLoopActivity"></activity>
+        <activity android:name=".activity.TextInputActivity"></activity>
+        <activity android:name=".activity.RecyclerViewLoopActivity" />
         <activity android:name=".activity.RecyclerViewActivity" />
         <activity android:name=".activity.FourActivity" />
         <activity android:name=".activity.ThreeActivity" />

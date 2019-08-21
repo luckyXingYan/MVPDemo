@@ -13,6 +13,7 @@
         <item name="android:textColor">#383838</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="Title_TextAppearance_collapsed">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#383838</item>
@@ -23,5 +24,37 @@
         <item name="colorControlNormal">#000000</item>
         <item name="colorControlActivated">#03A9F4</item>
     </style>
+
+    <!--textInputLayout 主题样式-->
+    <style name="CustomAppTheme_textInputLayout" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorHint">#BDBDBD</item>
+        <item name="colorControlNormal">#000000</item>
+        <item name="colorControlActivated">#38CC3D</item>
+        <item name="colorControlHighlight">#63A3D7</item>
+    </style>
+
+    <!-- 设置 textInputLayout 提示文字样式 -->
+    <style name="hintAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ef6</item>
+    </style>
+
+
+    <!-- 设置 textInputLayout 长度提示文字样式 -->
+    <style name="counterAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#001aff</item>
+    </style>
+    <!-- 设置 textInputLayout 超出长度提示文字样式 -->
+    <style name="overAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff0000</item>
+    </style>
+    <!-- 设置 textInputLayout 错误提示文字样式 -->
+    <style name="errorAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#9f6666</item>
+    </style>
+
 
 </resources>

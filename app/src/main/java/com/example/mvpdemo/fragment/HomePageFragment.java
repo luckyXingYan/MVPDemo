@@ -6,12 +6,15 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.activity.FourActivity;
 import com.example.mvpdemo.activity.RecyclerViewActivity;
 import com.example.mvpdemo.activity.SecondActivity;
+import com.example.mvpdemo.activity.TextInputActivity;
 import com.example.mvpdemo.activity.ThreeActivity;
 import com.example.mvpdemo.base.mvp.BaseFragment;
 import com.example.mvpdemo.bean.HomeDataBean;
@@ -27,7 +30,8 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements IHomePageView, View.OnClickListener {
     private static final String TAG = "HomePageFragment";
-    private Button btnRequest, btn_three, btn_four, btn_snackBar, btn_recyclerView;
+    private Button btnRequest, btn_three, btn_four, btn_snackBar, btn_recyclerView, textInput;
+    private ToggleButton toggleBtn;
 
 
     public static HomePageFragment newInstance() {
@@ -46,11 +50,21 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
         btn_four = getView(view, R.id.btn_four);
         btn_snackBar = getView(view, R.id.btn_snackBar);
         btn_recyclerView = getView(view, R.id.btn_recyclerView);
+        toggleBtn = getView(view, R.id.toggleBtn);
+        textInput = getView(view, R.id.btn_textInput);
         btnRequest.setOnClickListener(this);
         btn_three.setOnClickListener(this);
         btn_four.setOnClickListener(this);
         btn_snackBar.setOnClickListener(this);
         btn_recyclerView.setOnClickListener(this);
+        textInput.setOnClickListener(this);
+
+        toggleBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                showToastMsg("onCheckedChanged：" + isChecked);
+            }
+        });
     }
 
     @Override
@@ -134,6 +148,9 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
                 break;
             case R.id.btn_recyclerView://recyclerView
                 RecyclerViewActivity.open(getActivity());
+                break;
+            case R.id.btn_textInput://textInput
+                TextInputActivity.open(getActivity());
                 break;
             default:
                 break;

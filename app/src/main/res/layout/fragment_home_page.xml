@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SecondActivity">
+    tools:context=".activity.SecondActivity"
+    tools:ignore="MissingConstraints">
 
     <Button
         android:id="@+id/btn_request"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="首页"
-        tools:ignore="MissingConstraints" />
+        android:text="首页" />
 
     <Button
         android:id="@+id/btn_three"
@@ -19,8 +19,7 @@
         android:layout_height="40dp"
         android:text="Three_Activity"
         android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_request"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintLeft_toRightOf="@id/btn_request" />
 
     <Button
         android:id="@+id/btn_four"
@@ -28,8 +27,7 @@
         android:layout_height="40dp"
         android:text="Four_Activity"
         android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_three"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintLeft_toRightOf="@id/btn_three" />
 
     <Button
         android:id="@+id/btn_snackBar"
@@ -50,8 +48,7 @@
         android:textSize="18sp"
         android:theme="@style/checkbox"
         app:layout_constraintLeft_toRightOf="@id/btn_snackBar"
-        app:layout_constraintTop_toBottomOf="@id/btn_four"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/btn_four" />
 
     <Button
         android:id="@+id/btn_recyclerView"
@@ -61,4 +58,32 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@id/btn_checkBox"
         app:layout_constraintTop_toBottomOf="@id/btn_four" />
+
+    <!--ToggleButton本质上是一个开关  textOn/textOff 默认显示文字是开启关闭-->
+    <ToggleButton
+        android:id="@+id/toggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="关灯"
+        android:textOn="开灯"
+        app:layout_constraintTop_toBottomOf="@id/btn_snackBar" />
+
+    <ToggleButton
+        android:id="@+id/toggleBtnImg"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/selector_toggle_btn_bg"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintLeft_toRightOf="@id/toggleBtn"
+        app:layout_constraintTop_toBottomOf="@id/btn_snackBar" />
+
+    <Button
+        android:id="@+id/btn_textInput"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="textInput"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/toggleBtnImg"
+        app:layout_constraintTop_toBottomOf="@id/btn_snackBar" />
 </android.support.constraint.ConstraintLayout>
