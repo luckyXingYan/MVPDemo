@@ -20,6 +20,10 @@ import com.example.mvpdemo.presenter.DetailPresenter;
 
 import java.util.List;
 
+/**
+ * 组合式 ItemDecoration 实现分组悬浮效果
+ * 粘贴头部效果,越来越多的项目中运用(绘制分组的头部)
+ */
 public class RecyclerViewActivity2 extends BaseActivity<DetailPresenter> implements IDetailView {
 
     private RecyclerView recyclerView;

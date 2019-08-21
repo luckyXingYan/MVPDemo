@@ -44,4 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y10"
         android:background="#FF6667" />
+    <!--或者
+    使用了?android:attr/listDivider作为背景色，?android:attr/listDivider其实就是默认的分割线。-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y10"
+        android:background="?android:attr/listDivider" />
 </LinearLayout>

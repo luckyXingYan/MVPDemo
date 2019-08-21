@@ -50,17 +50,17 @@ public class LoopImgAdapter extends BaseRecyclerAdapter<String, LoopImgAdapter.M
 
 //        String url = getItemData(i);
         String url = getItemData(i % getData().size());//控制滚动的关键，从第几个位置到第几个位置展示图片
-        Glide.with(context).load(url).into(myViewHolder.iv_loop);
+        Glide.with(context).load(url).into(myViewHolder.ivLoop);
 
     }
 
     protected class MyViewHolder extends BaseViewHolder {
 
-        private ImageView iv_loop;
+        private ImageView ivLoop;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            iv_loop = getView(R.id.iv_loop);
+            ivLoop = getView(R.id.iv_loop);
         }
     }
 }

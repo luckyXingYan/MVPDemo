@@ -1,6 +1,5 @@
 package com.example.mvpdemo.fragment;
 
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -8,12 +7,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.activity.FourActivity;
 import com.example.mvpdemo.activity.RecyclerViewActivity;
-import com.example.mvpdemo.activity.RecyclerViewActivity2;
 import com.example.mvpdemo.activity.SecondActivity;
 import com.example.mvpdemo.activity.ThreeActivity;
 import com.example.mvpdemo.base.mvp.BaseFragment;

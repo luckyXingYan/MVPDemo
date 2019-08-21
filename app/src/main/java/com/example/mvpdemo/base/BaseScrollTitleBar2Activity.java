@@ -20,7 +20,7 @@ public abstract class BaseScrollTitleBar2Activity<P extends BasePresenter> exten
     protected CollapsingToolbarLayout mTitleBar;
     private Toolbar toolbar;
     private AppBarLayout appBarLayout;
-    private TextView titleBarTextExpanded, tv_subtitle_expand, tv_subtitle, tv_title;
+    private TextView titleBarTextExpanded, subTitleExpand, subTitle, title,titleLeft;
 
     @Override
     protected int layoutId() {
@@ -35,21 +35,22 @@ public abstract class BaseScrollTitleBar2Activity<P extends BasePresenter> exten
         frameBottomLayout = getView(R.id.fl_bottom);
         mTitleBar = getView(R.id.collapsing_toolbar);
         titleBarTextExpanded = getView(R.id.titleBarTextExpanded);
-        tv_subtitle_expand = getView(R.id.tv_subtitle_expand);
-        tv_subtitle = getView(R.id.tv_subtitle);
-        tv_title = getView(R.id.tv_title);
+        subTitleExpand = getView(R.id.tv_subtitle_expand);
+        subTitle = getView(R.id.tv_subtitle);
+        title = getView(R.id.tv_title);
         appBarLayout = getView(R.id.appbar_layout);
+        titleLeft = getView(R.id.iv_title_left);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 int scrollRangle = appBarLayout.getTotalScrollRange();
                 float alpha = Math.abs(scrollRangle + verticalOffset) / (float) scrollRangle;
 
-                tv_subtitle.setAlpha(1 - alpha);
-                tv_title.setAlpha(1 - alpha);
+                subTitle.setAlpha(1 - alpha);
+                title.setAlpha(1 - alpha);
 
                 titleBarTextExpanded.setAlpha(alpha);
-                tv_subtitle_expand.setAlpha(alpha);
+                subTitleExpand.setAlpha(alpha);
             }
         });
 
@@ -62,6 +63,13 @@ public abstract class BaseScrollTitleBar2Activity<P extends BasePresenter> exten
             bottomView = View.inflate(this, bottomLayoutId(), null);
             frameBottomLayout.addView(bottomView);
         }
+
+        titleLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         initContentView();
     }
 

@@ -15,6 +15,7 @@ import com.example.mvpdemo.bean.DetailDataBean;
 import com.example.mvpdemo.iview.IDetailView;
 import com.example.mvpdemo.presenter.DetailPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewActivity extends BaseScrollTitleBarActivity<DetailPresenter> implements IDetailView {
@@ -52,6 +53,20 @@ public class RecyclerViewActivity extends BaseScrollTitleBarActivity<DetailPrese
     @Override
     protected void initData() {
         presenter.getDetailData("0", "10", this);
+
+        //当接口请求失败后 模拟接口数据适配 方便后续测试
+//        List<DetailDataBean> data = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            DetailDataBean bean = new DetailDataBean();
+//            bean.title = "标题" + i;
+//            if (i % 2 == 0) {
+//                bean.imgUrl = "https://img.52z.com/upload/news/image/20180621/20180621055734_59936.jpg";
+//            } else {
+//                bean.imgUrl = "https://img.pc841.com/2018/0922/20180922111049508.jpg";
+//            }
+//            data.add(bean);
+//        }
+//        adapter.setData(data);
     }
 
     @Override
@@ -76,6 +91,5 @@ public class RecyclerViewActivity extends BaseScrollTitleBarActivity<DetailPrese
 
     @Override
     public void updateInfoData(List<DetailDataBean> data) {
-
     }
 }

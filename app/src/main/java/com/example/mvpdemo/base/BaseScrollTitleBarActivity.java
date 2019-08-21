@@ -6,6 +6,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.example.mvpdemo.R;
 import com.example.mvpdemo.base.mvp.BaseActivity;
@@ -18,6 +19,7 @@ public abstract class BaseScrollTitleBarActivity<P extends BasePresenter> extend
     private View contentView, bottomView;
     protected CollapsingToolbarLayout mTitleBar;
     private Toolbar toolbar;
+    private ImageView backTitleBar;
 
 
     @Override
@@ -33,6 +35,7 @@ public abstract class BaseScrollTitleBarActivity<P extends BasePresenter> extend
         nestedScrollView = getView(R.id.nsv_content);
         frameBottomLayout = getView(R.id.fl_bottom);
         mTitleBar = getView(R.id.collapsing_toolbar);
+        backTitleBar = getView(R.id.iv_back_titleBar);
 
         //将 contentLayout 装载进 NestedScrollView 中
         contentView = View.inflate(this, getContentLayoutId(), null);
@@ -43,6 +46,13 @@ public abstract class BaseScrollTitleBarActivity<P extends BasePresenter> extend
             bottomView = View.inflate(this, bottomLayoutId(), null);
             frameBottomLayout.addView(bottomView);
         }
+
+        backTitleBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         initContentView();
     }
 

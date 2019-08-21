@@ -45,9 +45,9 @@ public class ImgListAdapter extends BaseRecyclerAdapter<DetailDataBean, ImgListA
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int position) {
         DetailDataBean bean = getItemData(position);
-        myViewHolder.tv_title.setText(bean.title);
-        Glide.with(context).load(bean.imgUrl).into(myViewHolder.iv_icon);
-        myViewHolder.btn_loop.setOnClickListener(new View.OnClickListener() {
+        myViewHolder.title.setText(bean.title);
+        Glide.with(context).load(bean.imgUrl).into(myViewHolder.icon);
+        myViewHolder.btnLoop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RecyclerViewLoopActivity.open(context);
@@ -58,15 +58,15 @@ public class ImgListAdapter extends BaseRecyclerAdapter<DetailDataBean, ImgListA
 
     protected class MyViewHolder extends BaseViewHolder {
 
-        private TextView tv_title;
-        private ImageView iv_icon;
-        private Button btn_loop;
+        private TextView title;
+        private ImageView icon;
+        private Button btnLoop;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_title = getView(R.id.tv_title);
-            iv_icon = getView(R.id.iv_icon);
-            btn_loop = getView(R.id.btn_loop);
+            title = getView(R.id.tv_title);
+            icon = getView(R.id.iv_icon);
+            btnLoop = getView(R.id.btn_loop);
         }
     }
 }

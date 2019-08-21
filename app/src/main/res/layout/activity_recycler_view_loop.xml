@@ -10,6 +10,23 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y400" />
+        android:layout_height="@dimen/y200" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView2" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y500"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView3" />
 </android.support.constraint.ConstraintLayout>

@@ -39,18 +39,16 @@
                     app:contentInsetLeft="0dp"
                     app:contentInsetStart="0dp"
                     app:layout_collapseMode="pin"
-                    app:navigationIcon="@mipmap/ic_title_back"
                     app:title="标题"
                     app:titleTextAppearance="@style/Title_TextAppearance_Expend">
 
-                    <!--              <ImageView
-                                      android:id="@+id/titleBarLeft"
-                                      android:layout_width="@dimen/x94"
-                                      android:layout_height="match_parent"
-                                      android:layout_gravity="center_vertical"-
-                                      android:scaleType="centerInside"
-                                      android:src="@mipmap/ic_title_back" />
-              -->
+                    <ImageView
+                        android:id="@+id/iv_back_titleBar"
+                        android:layout_width="@dimen/x94"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_title_back" />
                 </android.support.v7.widget.Toolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
