@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     tools:ignore="MissingConstraints">
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#fd6"
-        android:gravity="center"
+        android:id="@+id/btn_common_bottom"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y100"
+        android:background="@drawable/shape_rectangle_50_corners_green"
         android:text="下一步"
-        android:textSize="20sp" />
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

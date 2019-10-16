@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mvpdemo">
+    package="com.example.thin">
 
+    <!--网络请求权限-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--拍照==写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApp"
@@ -12,20 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.TextInputActivity"></activity>
-        <activity android:name=".activity.RecyclerViewLoopActivity" />
-        <activity android:name=".activity.RecyclerViewActivity" />
-        <activity android:name=".activity.FourActivity" />
-        <activity android:name=".activity.ThreeActivity" />
-        <activity android:name=".activity.SecondActivity" />
-        <activity android:name=".activity.RecyclerViewActivity2" />
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SecondActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FollowPositionActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

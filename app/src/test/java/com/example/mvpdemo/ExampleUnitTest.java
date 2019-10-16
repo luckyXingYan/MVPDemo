@@ -1,4 +1,4 @@
-package com.example.mvpdemo;
+package com.example.thin;
 
 import org.junit.Test;
 
