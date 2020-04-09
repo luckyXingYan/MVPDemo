@@ -1,4 +1,4 @@
-package com.example.thin;
+package com.example.mvpdemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.thin", appContext.getPackageName());
+        assertEquals("com.example.mvpdemo", appContext.getPackageName());
     }
 }
