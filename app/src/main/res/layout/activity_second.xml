@@ -4,13 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SecondActivity">
+    android:background="#fff"
+    tools:ignore="MissingConstraints">
+
+
+    <TextView
+        android:id="@+id/tv_top"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:text="hhdhddhshs" />
 
     <Button
         android:id="@+id/btn_request"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="请求接口"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/tv_top" />
 
+    <TextView
+        android:id="@+id/tv_01"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/btn_request" />
+
+    <TextView
+        android:id="@+id/tv_02"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_01" />
+
+    <TextView
+        android:id="@+id/tv_03"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_02" />
+
+    <TextView
+        android:id="@+id/tv_04"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_03" />
+
+    <TextView
+        android:id="@+id/tv_05"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_04" />
+
+    <TextView
+        android:id="@+id/tv_06"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_05" />
+
+    <TextView
+        android:id="@+id/tv_07"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="请求接口aa"
+        app:layout_constraintTop_toBottomOf="@id/tv_06" />
+
+    <TextView
+        android:id="@+id/tv_08"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="请求接口ab"
+        app:layout_constraintTop_toBottomOf="@id/tv_07" />
 </android.support.constraint.ConstraintLayout>
