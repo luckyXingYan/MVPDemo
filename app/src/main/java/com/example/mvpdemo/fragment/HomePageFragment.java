@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mvpdemo.R;
+import com.example.mvpdemo.activity.FullActivity;
 import com.example.mvpdemo.activity.SecondActivity;
 import com.example.mvpdemo.base.mvp.BaseFragment;
 import com.example.mvpdemo.bean.HomeDataBean;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements IHomePageView {
     private static final String TAG = "HomePageFragment";
-    private Button btnRequest;
+    private Button btnRequest, btnFull;
 
 
     public static HomePageFragment newInstance() {
@@ -35,10 +36,23 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
     @Override
     protected void initView(final View view) {
         btnRequest = getView(view, R.id.btn_request);
+        btnFull = getView(view, R.id.btn_full);
         btnRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SecondActivity.open(getActivity());
+            }
+        });
+
+        /**
+         * 沉浸式导航栏
+         * 导航栏分为顶部状态栏和底部虚拟键盘，导航栏沉浸式在Android 4.4之后被推出
+         */
+        btnFull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //[一] 在某些场景下，直接全屏就可以满足客户的需求：比如拍照界面
+                FullActivity.open(getActivity());
             }
         });
     }
